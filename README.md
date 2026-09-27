@@ -8,8 +8,7 @@ macOS applications from [Alsatian](https://github.com/alsatianco).
 brew tap alsatianco/tap
 ```
 
-The Binturong cask becomes available after its first stable release has been
-published and the cask update workflow has completed:
+Install Binturong:
 
 ```bash
 brew install --cask alsatianco/tap/binturong
