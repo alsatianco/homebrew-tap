@@ -31,6 +31,9 @@ def render(release, checksums):
     matches = re.findall(r'^([a-f0-9]{64})  ' + re.escape(name) + r'$', checksums, re.MULTILINE)
     if len(matches) != 1:
         raise ValueError('Missing or duplicate DMG checksum')
+    # v0.1.0 shipped before the app bundle included the CLI.
+    cli_binary = ('\n  binary "#{appdir}/Binturong.app/Contents/MacOS/binturong-cli"'
+                  if tuple(map(int, version.split('.'))) > (0, 1, 0) else '')
     return f'''cask "binturong" do
   version "{version}"
   sha256 "{matches[0]}"
@@ -40,7 +43,7 @@ def render(release, checksums):
   desc "Desktop tools for code, data, text, and images"
   homepage "https://play.alsatian.co/software/binturong.html"
 
-  app "Binturong.app"
+  app "Binturong.app"{cli_binary}
 
   caveats <<~EOS
     If macOS blocks this unnotarized app, see the macOS installation steps:
