@@ -1,6 +1,6 @@
 cask "binturong" do
-  version "0.1.0"
-  sha256 "6c9548a8bdca042e2071108a7462e457a68a46503381c2e377bd5506570b1bf5"
+  version "0.1.1"
+  sha256 "20b378f90db2682baf99a864f0c46526dec61446eeb02ff404ad995380dc9ade"
 
   url "https://github.com/alsatianco/binturong/releases/download/v#{version}/Binturong_#{version}_universal.dmg"
   name "Binturong"
@@ -8,6 +8,7 @@ cask "binturong" do
   homepage "https://play.alsatian.co/software/binturong.html"
 
   app "Binturong.app"
+  binary "#{appdir}/Binturong.app/Contents/MacOS/binturong-cli"
 
   caveats <<~EOS
     If macOS blocks this unnotarized app, see the macOS installation steps:
