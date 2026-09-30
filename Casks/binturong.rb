@@ -1,6 +1,6 @@
 cask "binturong" do
-  version "0.1.1"
-  sha256 "20b378f90db2682baf99a864f0c46526dec61446eeb02ff404ad995380dc9ade"
+  version "0.1.2"
+  sha256 "271ee032171aa53ecee7360a32f504220a8634560d5ae6eccc99e83d9c6811e5"
 
   url "https://github.com/alsatianco/binturong/releases/download/v#{version}/Binturong_#{version}_universal.dmg"
   name "Binturong"
